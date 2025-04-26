@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - San Andreas Roleplay: Evolved</title>
+    <link rel="stylesheet" href="apply.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="San Andreas Roleplay: Evolved Logo" class="logo-image">
+            <div class="logo-text">San Andreas Roleplay: Evolved</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="cad.html" class="active">CAD Preview</a></li>
+                <li><a href="support.html" class="active">Support hot_babby</a></li>
+                <li><a href="adminlogin.html">Admin Login</a></li>
+                        </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="apply-hero">
+            <div class="hero-content">
+                <h1>Apply to Join a Department</h1>
+                <p>Fill out the detailed application below to join one of our dedicated departments.</p>
+            </div>
+        </section>
+
+        <section id="application-form" class="content-section">
+            <div class="container">
+                <h2>Department Application</h2>
+                <form id="applicationForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="discord">Discord Tag (e.g., User#1234):</label>
+                        <input type="text" id="discord" name="discord" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="13" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Applying For:</label>
+                        <select id="department" name="department" required>
+                            <option value="">-- Select a Department --</option>
+                            <option value="state-troopers">State Troopers (SAST)</option>
+                            <option value="sheriffs-office">Sheriff's Office (BCSO)</option>
+                            <option value="police-department">Police Department (LSPD/SSPD/BCPD)</option>
+                            <option value="ems">Emergency Medical Services (SAFD/LSFD/BCFD)</option>
+                            <option value="fire-department">Fire Department (SAFD/BCFD/LSFD)</option>
+                            <option value="department-of-transportation">Department of Transportation (DOT)</option>
+                            <option value="other">Other (Specify in Additional Information)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prior-experience">Prior Roleplay Experience (if any):</label>
+                        <textarea id="prior-experience" name="prior-experience" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="why-department">Why do you want to join this specific department?</label>
+                        <textarea id="why-department" name="why-department" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills-qualifications">Relevant Skills and Qualifications:</label>
+                        <textarea id="skills-qualifications" name="skills-qualifications" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="character-background">Brief Character Background (if applicable):</label>
+                        <textarea id="character-background" name="character-background" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timezone">Your Timezone:</label>
+                        <input type="text" id="timezone" name="timezone" placeholder="e.g., PST, EST, GMT" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playtime">Estimated Weekly Playtime (in hours):</label>
+                        <input type="number" id="playtime" name="playtime" min="1" required>
+                    </div>
+                    <div class="form-group" id="other-department-field" style="display: none;">
+                        <label for="other-department-specify">Specify Other Department:</label>
+                        <input type="text" id="other-department-specify" name="other-department-specify">
+                    </div>
+                    <div class="form-group">
+                        <label for="additional-info">Additional Information:</label>
+                        <textarea id="additional-info" name="additional-info" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="agreement">By submitting this application, you agree to abide by all server rules and department guidelines.</label>
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                    </div>
+                    <button type="submit" class="button primary">Submit Application</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 San Andreas Roleplay: Evolved. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const applicationForm = document.getElementById('applicationForm');
+            const formMessage = document.getElementById('form-message');
+            const departmentSelect = document.getElementById('department');
+            const otherDepartmentField = document.getElementById('other-department-field');
+            const webhookURL = 'https://discord.com/api/webhooks/1365819110042243174/zEXp4YlDNvNfVuJSxzV5mXut9EAU_5OR7mG_yyOQ0mdzX0e7zw4iIlbvycUNS0PP504G'; // Replace with your actual webhook URL
+
+            departmentSelect.addEventListener('change', () => {
+                if (departmentSelect.value === 'other') {
+                    otherDepartmentField.style.display = 'block';
+                    document.getElementById('other-department-specify').setAttribute('required', '');
+                } else {
+                    otherDepartmentField.style.display = 'none';
+                    document.getElementById('other-department-specify').removeAttribute('required');
+                    document.getElementById('other-department-specify').value = ''; // Clear the field
+                }
+            });
+
+            applicationForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(applicationForm);
+                const applicationData = {};
+                formData.forEach((value, key) => {
+                    applicationData[key] = value;
+                });
+
+                const message = {
+                    embeds: [{
+                        title: `New Department Application - ${applicationData.department.replace(/-/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}`,
+                        fields: Object.entries(applicationData).map(([name, value]) => ({
+                            name: name.charAt(0).toUpperCase() + name.slice(1).replace(/-/g, ' '),
+                            value: value || 'Not provided',
+                        })),
+                        timestamp: new Date().toISOString(),
+                    }],
+                };
+
+                try {
+                    const response = await fetch(webhookURL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(message),
+                    });
+
+                    if (response.ok) {
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = 'Application submitted successfully! We will review it shortly. You will be contacted by a department head for further instructions!';
+                        applicationForm.reset();
+                        otherDepartmentField.style.display = 'none'; // Reset the 'other' field
+                        document.getElementById('other-department-specify').removeAttribute('required');
+                    } else {
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = `Failed to submit application. Error: ${response.statusText}`;
+                        console.error('Discord webhook error:', response);
+                    }
+                } catch (error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'An unexpected error occurred while submitting the application.';
+                    console.error('Fetch error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

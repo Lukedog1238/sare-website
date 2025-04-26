@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD - San Andreas Roleplay: Evolved</title>
+    <link rel="stylesheet" href="cad.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="San Andreas Roleplay: Evolved Logo" class="logo-image">
+            <div class="logo-text">San Andreas Roleplay: Evolved CAD</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="cad.html" class="active">CAD Preview</a></li>
+                <li><a href="support.html" class="active">Support hot_babby</a></li>
+                <li><a href="adminlogin.html">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="cad-dashboard">
+        <section id="overview">
+            <div class="container">
+                <h1>CAD System Overview</h1>
+                <p>Welcome to the San Andreas Roleplay: Evolved Computer-Aided Dispatch system. This powerful tool provides real-time information, streamlines communication, and enhances your roleplay experience.</p>
+                <div class="dashboard-widgets">
+                    <div class="widget active-incidents">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Active Incidents</h3>
+                        <span class="data">12</span>
+                    </div>
+                    <div class="widget available-units">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Available Units</h3>
+                        <span class="data">25</span>
+                    </div>
+                    <div class="widget pending-calls">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Pending Calls</h3>
+                        <span class="data">3</span>
+                    </div>
+                    <div class="widget server-status">
+                        <i class="fas fa-server"></i>
+                        <h3>Server Status</h3>
+                        <span class="data online">Online</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="call-management">
+            <div class="container">
+                <h2>Call Management</h2>
+                <div class="feature-highlight">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Create New Call</h3>
+                    <p>Initiate new calls for service with detailed information including location, nature of the incident, and involved parties.</p>
+                    <button class="button primary small">New Call</button>
+                </div>
+                <div class="call-list">
+                    <h3>Active Calls</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Call ID</th>
+                                <th>Location</th>
+                                <th>Nature</th>
+                                <th>Assigned Units</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>C-1045</td>
+                                <td>123 Paleto Blvd</td>
+                                <td>Traffic Accident with Injuries</td>
+                                <td>LSPD-10, EMS-2</td>
+                                <td class="status active">Active</td>
+                                <td><button class="button secondary small"><i class="fas fa-eye"></i> View</button></td>
+                            </tr>
+                            <tr>
+                                <td>C-1046</td>
+                                <td>Corner of Grove and Carson</td>
+                                <td>Disturbance - Loud Music</td>
+                                <td>BCSO-7</td>
+                                <td class="status pending">Pending</td>
+                                <td><button class="button secondary small"><i class="fas fa-eye"></i> View</button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="unit-management">
+            <div class="container">
+                <h2>Unit Management</h2>
+                <div class="feature-highlight">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3>Unit Status Updates</h3>
+                    <p>Real-time tracking of unit availability, current location, and status (e.g., Available, En Route, On Scene).</p>
+                    <button class="button secondary small">View Unit Map</button>
+                </div>
+                <div class="unit-list">
+                    <h3>Available Units</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Unit ID</th>
+                                <th>Agency</th>
+                                <th>Status</th>
+                                <th>Assigned Call</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LSPD-22</td>
+                                <td>Los Santos Police Dept.</td>
+                                <td class="status available">Available</td>
+                                <td>-</td>
+                                <td>Mission Row PD</td>
+                                <td><button class="button primary small"><i class="fas fa-link"></i> Assign</button></td>
+                            </tr>
+                            <tr>
+                                <td>BCSO-3</td>
+                                <td>Blaine County Sheriff's Office</td>
+                                <td class="status en-route">En Route</td>
+                                <td>C-1045</td>
+                                <td>Paleto Blvd</td>
+                                <td><button class="button secondary small"><i class="fas fa-location-arrow"></i> Track</button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="records-management">
+            <div class="container">
+                <h2>Records Management System (RMS)</h2>
+                <div class="feature-highlight">
+                    <i class="fas fa-database"></i>
+                    <h3>Integrated Records Database</h3>
+                    <p>Access and manage records for individuals, vehicles, and incidents. Search by name, VIN, call ID, etc.</p>
+                    <button class="button primary small">Search Records</button>
+                </div>
+                <div class="rms-search">
+                    <h3>Search Records</h3>
+                    <form>
+                        <div class="form-group inline">
+                            <label for="search-type">Search By:</label>
+                            <select id="search-type">
+                                <option value="name">Name</option>
+                                <option value="vin">VIN</option>
+                                <option value="call-id">Call ID</option>
+                                </select>
+                        </div>
+                        <div class="form-group inline">
+                            <label for="search-term">Term:</label>
+                            <input type="text" id="search-term" placeholder="Enter search term">
+                        </div>
+                        <button type="submit" class="button secondary small"><i class="fas fa-search"></i> Search</button>
+                    </form>
+                    </div>
+            </div>
+        </section>
+
+        <section id="mapping-integration">
+            <div class="container">
+                <h2>Mapping & Location Services</h2>
+                <div class="feature-highlight">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Real-time Map Integration</h3>
+                    <p>Visualize active incidents and unit locations on a dynamic map interface.</p>
+                    <button class="button primary small">View Live Map</button>
+                </div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt fa-5x"></i>
+                    <p>Interactive Map Placeholder</p>
+                    </div>
+            </div>
+        </section>
+
+        <section id="advanced-features">
+            <div class="container">
+                <h2>Advanced Features</h2>
+                <div class="feature-grid">
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>Dispatch Messaging</h3>
+                        <p>Secure and efficient in-system messaging between dispatchers and field units.</p>
+                    </div>
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Report Generation</h3>
+                        <p>Create and manage incident reports directly within the CAD system.</p>
+                    </div>
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-bell"></i>
+                        <h3>Alerting & Notifications</h3>
+                        <p>Customizable alerts for critical incidents, unit status changes, and server-wide announcements.</p>
+                    </div>
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Analytics & Reporting</h3>
+                        <p>Generate data-driven insights on incident trends, unit response times, and more.</p>
+                    </div>
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-user-cog"></i>
+                        <h3>Role-Based Access Control</h3>
+                        <p>Granular permissions to ensure users only have access to relevant features and information.</p>
+                    </div>
+                    <div class="advanced-feature-item">
+                        <i class="fas fa-history"></i>
+                        <h3>Audit Logging</h3>
+                        <p>Comprehensive logs of all system actions for accountability and review.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 San Andreas Roleplay: Evolved. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* features.css */
+
+/* Base Styles (from style.css) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* Or your preferred background color */
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.15em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #64b5f6;
+}
+
+footer {
+    background-color: #333; /* Or your preferred footer background color */
+    color: #eee;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Banner Section */
+#features-banner {
+    background: url('images/image3.png') center/cover no-repeat; /* Replace with your banner image */
+    color: #fff;
+    text-align: center;
+    padding: 180px 0;
+    position: relative;
+}
+
+#features-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0.8;
+}
+
+#features-banner .banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+#features-banner h1 {
+    font-size: 3.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+#features-banner p {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Detailed Features Section */
+#detailed-features {
+    padding: 80px 40px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+#detailed-features h2 {
+    font-size: 3em;
+    color: #64b5f6;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-description {
+    flex: 1;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.feature-description i {
+    font-size: 2.8em;
+    color: #64b5f6;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.feature-description h3 {
+    color: #eee;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.feature-description p {
+    font-size: 1.15em;
+    line-height: 1.8;
+}
+
+.feature-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-height: 200px; /* Ensure some minimum height for the image container */
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+    .feature-row {
+        flex-direction: column;
+    }
+
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+
+    .feature-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #features-banner h1 {
+        font-size: 3em;
+    }
+
+    #features-banner p {
+        font-size: 1.3em;
+    }
+
+    #detailed-features h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .feature-description h3 {
+        font-size: 1.8em;
+    }
+
+    .feature-description p {
+        font-size: 1.1em;
+    }
+}
