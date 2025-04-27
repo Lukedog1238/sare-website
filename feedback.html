@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - San Andreas Roleplay: Evolved</title>
+    <link rel="stylesheet" href="feedback.css">
+      <link rel="stylesheet" href="navigation.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="San Andreas Roleplay: Evolved Logo" class="logo-image">
+            <div class="logo-text">San Andreas Roleplay: Evolved</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="cad.html">CAD</a></li>
+                <li><a href="roster.html">Roster</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="adminlogin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="feedback-page">
+        <section class="feedback-section">
+            <h1>Share Your Feedback</h1>
+            <p>Your feedback is valuable in helping us improve San Andreas Roleplay: Evolved. Please take a moment to share your thoughts, suggestions, or bug reports.</p>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="feedbackType">Feedback Type:</label>
+                    <select id="feedbackType" name="feedbackType">
+                        <option value="suggestion">Suggestion</option>
+                        <option value="bugReport">Bug Report</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="compliment">Compliment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Your Username (Optional):</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email (Optional):</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="feedbackText">Your Feedback:</label>
+                    <textarea id="feedbackText" name="feedbackText" rows="8" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Submit Feedback</button>
+                    <div id="submission-message" class="submission-message"></div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 San Andreas Roleplay: Evolved. All rights reserved.</p>
+    </footer>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
